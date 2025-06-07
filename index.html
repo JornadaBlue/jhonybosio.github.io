@@ -7,13 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0047AB;
-      --secondary: #00A3FF;
-      --accent: #FF6B00;
+      --primary: #002D6E; /* Azul escuro Blue3 */
+      --secondary: #00A3FF; /* Azul claro Blue3 */
+      --accent: #FF6B00; /* Laranja Blue3 */
       --background: #f9f9f9;
       --white: #fff;
       --gray: #666;
       --dark: #111;
+      --cyan: #00FFFF; /* Azul ciano Blue3 */
     }
     * {
       margin: 0;
@@ -77,10 +78,10 @@
       transition: background 0.3s;
     }
     .cta-button:hover {
-      background: #003380;
+      background: var(--secondary);
     }
     .hero {
-      background: linear-gradient(135deg, var(--primary), #002D6E);
+      background: linear-gradient(135deg, var(--primary), #001A41);
       color: var(--white);
       padding: 150px 0 80px;
       position: relative;
@@ -114,7 +115,12 @@
       margin-bottom: 20px;
       line-height: 1.2;
     }
-    .hero h1 span {
+    .hero h1 .line1 {
+      display: block;
+      color: var(--white);
+    }
+    .hero h1 .line2 {
+      display: block;
       color: var(--secondary);
     }
     .hero p {
@@ -195,9 +201,32 @@
       margin-left: 20px;
       margin-bottom: 15px;
     }
+    .mentorias-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
     .mentoria {
-      margin-bottom: 40px;
+      flex: 1;
+      min-width: 300px;
+      margin-bottom: 20px;
+      padding: 25px;
+      border-radius: 12px;
+      background: var(--white);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 4px solid var(--primary);
+    }
+    .mentoria:nth-child(1) {
+      border-top-color: var(--secondary);
+    }
+    .mentoria:nth-child(2) {
+      border-top-color: var(--primary);
+    }
+    .mentoria:nth-child(3) {
+      border-top-color: var(--accent);
     }
     .mentoria:hover {
       transform: translateY(-5px);
@@ -205,6 +234,7 @@
     }
     .btn {
       display: inline-block;
+      width: 100%;
       margin-top: 15px;
       background: var(--primary);
       color: var(--white);
@@ -212,11 +242,30 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      text-align: center;
       transition: background 0.3s, transform 0.2s;
     }
+    .mentoria:nth-child(1) .btn {
+      background: var(--secondary);
+    }
+    .mentoria:nth-child(2) .btn {
+      background: var(--primary);
+    }
+    .mentoria:nth-child(3) .btn {
+      background: var(--accent);
+    }
     .btn:hover {
-      background: #003380;
+      background: var(--secondary);
       transform: translateY(-2px);
+    }
+    .mentoria:nth-child(1) .btn:hover {
+      background: #0080c0;
+    }
+    .mentoria:nth-child(2) .btn:hover {
+      background: #00408f;
+    }
+    .mentoria:nth-child(3) .btn:hover {
+      background: #e05a00;
     }
     footer {
       text-align: center;
@@ -257,6 +306,9 @@
       }
       .video-placeholder {
         height: 350px;
+      }
+      .mentorias-container {
+        flex-direction: column;
       }
     }
     
@@ -319,11 +371,14 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Transforme sua <span>jornada financeira</span></h1>
+        <h1>
+          <span class="line1">Transforme sua</span>
+          <span class="line2">jornada financeira</span>
+        </h1>
         <p>Seja qual for o seu momento de vida, estarei ao seu lado para te guiar na sua jornada de investimentos com estratégias personalizadas para cada nível de patrimônio.</p>
         <a href="#mentorias" class="btn">Conheça as Mentorias</a>
       </div>
-      <img src="/src/images/FotoJhonyBosiosemfundo.png" alt="Jhony Bosio" class="hero-image">
+      <img src="src/images/FotoJhonyBosiosemfundo.png" alt="Jhony Bosio" class="hero-image">
     </div>
   </section>
 
@@ -363,63 +418,51 @@
     <div class="section-title">
       <h2>Qual mentoria combina com você?</h2>
     </div>
-  </section>
+    
+    <div class="mentorias-container">
+      <div class="mentoria">
+        <h2>IMPULSE – Cresça com estratégia</h2>
+        <p>🔎 <strong>Problema:</strong> Você investe, mas sente que pode evoluir mais rápido com orientação.</p>
+        <p>✅ <strong>Transformação:</strong> Planejamento personalizado e reuniões de acompanhamento para guiar seus próximos passos.</p>
+        <h3>Você recebe:</h3>
+        <ul>
+          <li>3 Carteiras recomendadas</li>
+          <li>Relatório mensal de alocação</li>
+          <li>1 reunião de planejamento financeiro</li>
+          <li>5 reuniões de acompanhamento em 6 meses</li>
+        </ul>
+        <p><strong>Investimento:</strong> R$ 1.997,00</p>
+        <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20IMPULSE" class="btn" target="_blank">Quero essa mentoria</a>
+      </div>
 
-  <section class="mentoria">
-    <h2>GROW – Comece com segurança</h2>
-    <p>🔎 <strong>Problema:</strong> Você está começando a investir e se sente perdido.</p>
-    <p>✅ <strong>Transformação:</strong> Acesso a carteiras prontas, comunidade e acompanhamento com IA para clareza e ação.</p>
-    <h3>Você recebe:</h3>
-    <ul>
-      <li>3 Carteiras recomendadas</li>
-      <li>Relatório mensal de alocação</li>
-      <li>Comunidade com insights diários</li>
-      <li>IA Educacional</li>
-    </ul>
-    <p><strong>Investimento:</strong> R$ 497,00</p>
-    <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20GROW" class="btn" target="_blank">Quero essa mentoria</a>
-  </section>
+      <div class="mentoria">
+        <h2>EQUILIBRIUM – Proteja seu patrimônio</h2>
+        <p>🔎 <strong>Problema:</strong> Você já tem patrimônio relevante e precisa proteger e crescer com inteligência.</p>
+        <p>✅ <strong>Transformação:</strong> Carteiras premium, diversificação, previdência e estratégia de longo prazo via fee fixo.</p>
+        <h3>Você recebe:</h3>
+        <ul>
+          <li>Tudo do IMPULSE</li>
+          <li>Atendimento via fee fixo (sem custo adicional)</li>
+          <li>Acesso a soluções exclusivas Blue3</li>
+        </ul>
+        <p><strong>Investimento:</strong> Gratuita para investidores com R$ 500 mil+</p>
+        <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20EQUILIBRIUM" class="btn" target="_blank">Sou cliente Blue3</a>
+      </div>
 
-  <section class="mentoria">
-    <h2>IMPULSE – Cresça com estratégia</h2>
-    <p>🔎 <strong>Problema:</strong> Você investe, mas sente que pode evoluir mais rápido com orientação.</p>
-    <p>✅ <strong>Transformação:</strong> Planejamento personalizado e reuniões de acompanhamento para guiar seus próximos passos.</p>
-    <h3>Você recebe:</h3>
-    <ul>
-      <li>Tudo do GROW</li>
-      <li>1 reunião de planejamento financeiro</li>
-      <li>4 reuniões de acompanhamento em 6 meses</li>
-    </ul>
-    <p><strong>Investimento:</strong> R$ 1.997,00</p>
-    <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20IMPULSE" class="btn" target="_blank">Quero essa mentoria</a>
-  </section>
-
-  <section class="mentoria">
-    <h2>EQUILIBRIUM – Proteja seu patrimônio</h2>
-    <p>🔎 <strong>Problema:</strong> Você já tem patrimônio relevante e precisa proteger e crescer com inteligência.</p>
-    <p>✅ <strong>Transformação:</strong> Carteiras premium, diversificação, previdência e estratégia de longo prazo via fee fixo.</p>
-    <h3>Você recebe:</h3>
-    <ul>
-      <li>Tudo do IMPULSE</li>
-      <li>Atendimento via fee fixo (sem custo adicional)</li>
-      <li>Acesso a soluções exclusivas Blue3</li>
-    </ul>
-    <p><strong>Investimento:</strong> Gratuita para investidores com R$ 500 mil+</p>
-    <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20EQUILIBRIUM" class="btn" target="_blank">Sou cliente Blue3</a>
-  </section>
-
-  <section class="mentoria">
-    <h2>VANGUARD – Construa seu legado</h2>
-    <p>🔎 <strong>Problema:</strong> Você busca governança, sucessão, blindagem e visão internacional.</p>
-    <p>✅ <strong>Transformação:</strong> Atendimento privado, plano multigeracional e suporte do comitê XP/Blue3.</p>
-    <h3>Você recebe:</h3>
-    <ul>
-      <li>Tudo do EQUILIBRIUM</li>
-      <li>Planejamento sucessório, holding, blindagem</li>
-      <li>Mentoria para sucessores e visão global</li>
-    </ul>
-    <p><strong>Investimento:</strong> Exclusiva para investidores com R$ 3 milhões+</p>
-    <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20VANGUARD" class="btn" target="_blank">Quero atendimento Private</a>
+      <div class="mentoria">
+        <h2>VANGUARD – Construa seu legado</h2>
+        <p>🔎 <strong>Problema:</strong> Você busca governança, sucessão, blindagem e visão internacional.</p>
+        <p>✅ <strong>Transformação:</strong> Atendimento privado, plano multigeracional e suporte do comitê XP/Blue3.</p>
+        <h3>Você recebe:</h3>
+        <ul>
+          <li>Tudo do EQUILIBRIUM</li>
+          <li>Planejamento sucessório, holding, blindagem</li>
+          <li>Mentoria para sucessores e visão global</li>
+        </ul>
+        <p><strong>Investimento:</strong> Exclusiva para investidores com R$ 3 milhões+</p>
+        <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20VANGUARD" class="btn" target="_blank">Quero atendimento Private</a>
+      </div>
+    </div>
   </section>
 
   <footer id="contato">
