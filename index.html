@@ -65,12 +65,16 @@
       font-weight: 500;
       transition: color 0.3s;
     }
+    /* Regra adicionada para garantir a cor branca do botão "Fale Comigo" */
+    .nav-links .cta-button {
+      color: var(--white) !important; /* Força a cor branca */
+    }
     .nav-links a:hover {
       color: var(--primary);
     }
     .cta-button {
       background: var(--primary);
-      color: var(--white);
+      /* color: var(--white); Removido daqui para evitar conflitos, movido para a regra mais específica acima */
       padding: 10px 20px;
       border-radius: 6px;
       text-decoration: none;
@@ -102,12 +106,14 @@
     .hero .container {
       position: relative;
       z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      /* Ajuste para centralizar o conteúdo hero após remover a imagem */
+      justify-content: center; 
+      text-align: center;
+      flex-direction: column; /* Em telas menores, o flex-direction já é column */
     }
     .hero-content {
-      max-width: 600px;
+      max-width: 800px; /* Aumentado para melhor aproveitamento do espaço */
+      margin: 0 auto; /* Centraliza o conteúdo hero */
     }
     .hero h1 {
       font-size: 3.5rem;
@@ -127,12 +133,6 @@
       font-size: 1.2rem;
       margin-bottom: 30px;
       font-weight: 300;
-    }
-    .hero-image {
-      width: 350px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
     .video-section {
       padding: 80px 0;
@@ -164,6 +164,11 @@
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
+    /* SOBRESCREVE A LARGURA MÁXIMA APENAS PARA A SEÇÃO DE MENTORIAS */
+    #mentorias {
+      max-width: 1200px; /* Permite que os 3 blocos se ajustem lado a lado */
+    }
+
     .section-title {
       text-align: center;
       margin-bottom: 40px;
@@ -203,14 +208,16 @@
     }
     .mentorias-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
       gap: 30px;
-      justify-content: space-between;
+      justify-content: center; /* Centraliza os itens quando há menos de 3 na linha */
       margin-top: 20px;
     }
     .mentoria {
-      flex: 1;
-      min-width: 300px;
+      /* flex-grow, flex-shrink, flex-basis */
+      flex: 1 1 calc(33.33% - 30px); /* Ajusta a base do item para 1/3 da largura menos o espaço do gap */
+      min-width: 280px; /* Largura mínima para cada card de mentoria antes de quebrar */
+      /* Removido max-width explícito aqui, pois flex-basis já define o tamanho */
       margin-bottom: 20px;
       padding: 25px;
       border-radius: 12px;
@@ -291,24 +298,28 @@
     
     /* Responsividade */
     @media (max-width: 992px) {
-      .hero .container {
-        flex-direction: column;
-        text-align: center;
-      }
       .hero-content {
         margin-bottom: 40px;
       }
       .hero h1 {
         font-size: 2.8rem;
       }
-      .hero-image {
-        width: 280px;
-      }
       .video-placeholder {
         height: 350px;
       }
       .mentorias-container {
-        flex-direction: column;
+        flex-direction: column; /* Força as mentorias a ficarem uma abaixo da outra em telas menores */
+        align-items: center; /* Centraliza os cards quando estão em coluna */
+      }
+      .mentoria {
+        flex: 0 0 auto; /* Reseta as propriedades flex para que empilhem */
+        width: 100%; /* Ocupa a largura total do container flexível */
+        max-width: 400px; /* Limita a largura máxima para legibilidade em mobile */
+        min-width: unset; /* Permite encolher abaixo do min-width de desktop se necessário */
+      }
+      /* Ajuste o padding da seção de mentorias para telas menores */
+      #mentorias {
+        padding: 20px;
       }
     }
     
@@ -340,9 +351,6 @@
       }
       .hero p {
         font-size: 1rem;
-      }
-      .hero-image {
-        width: 220px;
       }
       .video-placeholder {
         height: 250px;
@@ -378,7 +386,8 @@
         <p>Seja qual for o seu momento de vida, estarei ao seu lado para te guiar na sua jornada de investimentos com estratégias personalizadas para cada nível de patrimônio.</p>
         <a href="#mentorias" class="btn">Conheça as Mentorias</a>
       </div>
-      <img src="src/images/FotoJhonyBosiosemfundo.png" alt="Jhony Bosio" class="hero-image">
+      <!-- A imagem do Jhony Bosio foi removida daqui -->
+      <!-- <img src="src/images/FotoJhonyBosiosemfundo.png" alt="Jhony Bosio" class="hero-image"> -->
     </div>
   </section>
 
@@ -478,4 +487,3 @@
 
 </body>
 </html>
-
