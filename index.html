@@ -3,160 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mentoria Financeira Blue3</title>
+  <title>Mentoria Jhony Bosio | Blue3 Investimentos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* CSS Reset e Estilos Básicos */
+    :root {
+      --primary: #0047AB;
+      --background: #f9f9f9;
+      --white: #fff;
+      --gray: #666;
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', sans-serif;
+      background: var(--background);
+      color: #111;
       line-height: 1.6;
-      color: #333;
-      background-color: #f9f9f9;
-      padding: 20px;
+      padding: 0;
+      margin: 0;
     }
     header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 60px 20px;
       text-align: center;
-      padding: 40px 20px;
-      background-color: #0047AB;
-      color: #fff;
-      margin-bottom: 20px;
     }
     header h1 {
       font-size: 2.5rem;
+      font-weight: 700;
       margin-bottom: 10px;
     }
     header p {
       font-size: 1.2rem;
+      font-weight: 400;
     }
     section {
-      margin-bottom: 40px;
+      max-width: 960px;
+      margin: 40px auto;
       padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
     h2 {
-      font-size: 2rem;
-      color: #0047AB;
-      margin-bottom: 10px;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 12px;
     }
     h3 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 10px;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
     }
     p {
       margin-bottom: 10px;
     }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #0047AB;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #00337a;
+    ul {
+      margin-left: 20px;
+      margin-bottom: 10px;
     }
     .mentoria {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
-    .mentoria ul {
-      margin-left: 20px;
-      list-style-type: disc;
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: var(--primary);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #00307a;
     }
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: #666;
       padding: 20px;
-      margin-top: 40px;
-      border-top: 1px solid #ddd;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
+      font-size: 0.9rem;
+      color: var(--gray);
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Invista com Clareza, Cresça com Segurança, Proteja com Inteligência</h1>
-    <p>Uma mentoria sob medida para cada fase da sua jornada financeira, com a solidez da Blue3.</p>
+    <h1>Mentoria Financeira por Jhony Bosio</h1>
+    <p>Transforme sua vida financeira com acompanhamento estratégico para cada nível de patrimônio</p>
   </header>
 
-  <section id="intro">
-    <h2>Escolha o que mais parece com você:</h2>
+  <section>
+    <h2>Qual mentoria combina com você?</h2>
   </section>
 
-  <section id="grow" class="mentoria">
-    <h2>GROW – Comece sem errar os primeiros passos</h2>
-    <p><strong>Problema:</strong> você sente que está agindo no escuro, ouvindo dicas desconexas e sem estratégia clara.</p>
-    <p><strong>Transformação:</strong> plano seguro adaptado ao seu perfil, com acompanhamento profissional.</p>
+  <section class="mentoria">
+    <h2>GROW – Comece com segurança</h2>
+    <p>🔎 <strong>Problema:</strong> Você está começando a investir e se sente perdido.</p>
+    <p>✅ <strong>Transformação:</strong> Acesso a carteiras prontas, comunidade e acompanhamento com IA para clareza e ação.</p>
     <h3>Você recebe:</h3>
     <ul>
       <li>3 Carteiras recomendadas</li>
-      <li>Relatório mensal</li>
-      <li>Comunidade exclusiva</li>
-      <li>IA Educacional 24h</li>
+      <li>Relatório mensal de alocação</li>
+      <li>Comunidade com insights diários</li>
+      <li>IA Educacional</li>
     </ul>
-    <p><strong>Valor:</strong> R$ 497,00</p>
+    <p><strong>Investimento:</strong> R$ 497,00</p>
+    <a href="#" class="btn">Quero essa mentoria</a>
   </section>
 
-  <section id="impulse" class="mentoria">
-    <h2>IMPULSE – Cresça com suporte estratégico</h2>
-    <p><strong>Problema:</strong> sente que pode render mais com melhores decisões.</p>
-    <p><strong>Transformação:</strong> rebalanceamento tático e evolução constante.</p>
+  <section class="mentoria">
+    <h2>IMPULSE – Cresça com estratégia</h2>
+    <p>🔎 <strong>Problema:</strong> Você investe, mas sente que pode evoluir mais rápido com orientação.</p>
+    <p>✅ <strong>Transformação:</strong> Planejamento personalizado e reuniões de acompanhamento para guiar seus próximos passos.</p>
     <h3>Você recebe:</h3>
     <ul>
-      <li>Plano GROW completo</li>
-      <li>1 reunião de planejamento</li>
-      <li>4 encontros de acompanhamento</li>
+      <li>Tudo do GROW</li>
+      <li>1 reunião de planejamento financeiro</li>
+      <li>4 reuniões de acompanhamento em 6 meses</li>
     </ul>
-    <p><strong>Valor:</strong> R$ 1.997,00</p>
+    <p><strong>Investimento:</strong> R$ 1.997,00</p>
+    <a href="#" class="btn">Quero essa mentoria</a>
   </section>
 
-  <section id="equilibrium" class="mentoria">
-    <h2>EQUILIBRIUM – Proteja e diversifique seu patrimônio</h2>
-    <p><strong>Problema:</strong> busca proteção e estabilidade para o que já construiu.</p>
-    <p><strong>Transformação:</strong> carteiras exclusivas, previdência, sucessão.</p>
+  <section class="mentoria">
+    <h2>EQUILIBRIUM – Proteja seu patrimônio</h2>
+    <p>🔎 <strong>Problema:</strong> Você já tem patrimônio relevante e precisa proteger e crescer com inteligência.</p>
+    <p>✅ <strong>Transformação:</strong> Carteiras premium, diversificação, previdência e estratégia de longo prazo via fee fixo.</p>
     <h3>Você recebe:</h3>
     <ul>
-      <li>Tudo do plano IMPULSE</li>
-      <li>Fee fixo (sem custo direto)</li>
-      <li>Produtos XP/Blue3 exclusivos</li>
+      <li>Tudo do IMPULSE</li>
+      <li>Atendimento via fee fixo (sem custo adicional)</li>
+      <li>Acesso a soluções exclusivas Blue3</li>
     </ul>
-    <p><strong>Valor:</strong> Gratuita para R$ 500 mil+</p>
+    <p><strong>Investimento:</strong> Gratuita para investidores com R$ 500 mil+</p>
+    <a href="#" class="btn">Sou cliente Blue3</a>
   </section>
 
-  <section id="vanguard" class="mentoria">
-    <h2>VANGUARD – Construa seu legado com inteligência</h2>
-    <p><strong>Problema:</strong> precisa estruturar, blindar e internacionalizar seu patrimônio.</p>
-    <p><strong>Transformação:</strong> governança, sucessão e estratégia global.</p>
+  <section class="mentoria">
+    <h2>VANGUARD – Construa seu legado</h2>
+    <p>🔎 <strong>Problema:</strong> Você busca governança, sucessão, blindagem e visão internacional.</p>
+    <p>✅ <strong>Transformação:</strong> Atendimento privado, plano multigeracional e suporte do comitê XP/Blue3.</p>
     <h3>Você recebe:</h3>
     <ul>
-      <li>Plano EQUILIBRIUM completo</li>
-      <li>Holding, sucessão, blindagem</li>
-      <li>Comitê de investimentos</li>
-      <li>Mentoria para sucessores</li>
+      <li>Tudo do EQUILIBRIUM</li>
+      <li>Planejamento sucessório, holding, blindagem</li>
+      <li>Mentoria para sucessores e visão global</li>
     </ul>
-    <p><strong>Valor:</strong> Exclusivo para +R$ 3 mi sob custódia</p>
+    <p><strong>Investimento:</strong> Exclusiva para investidores com R$ 3 milhões+</p>
+    <a href="#" class="btn">Quero atendimento Private</a>
   </section>
 
   <footer>
-    <p>© 2025 Jhony Bosio | Mentoria Blue3</p>
-    <p>Instagram: <a href="https://instagram.com/jhonybosio" target="_blank">@jhonybosio</a></p>
+    <p>© 2025 Jhony Bosio | Blue3 Investimentos</p>
+    <p><a href="https://instagram.com/jhonybosio" target="_blank">@jhonybosio</a></p>
   </footer>
+
 </body>
 </html>
