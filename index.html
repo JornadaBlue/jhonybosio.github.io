@@ -7,415 +7,119 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #002D6E; /* Azul escuro Blue3 */
-      --secondary: #00A3FF; /* Azul claro Blue3 */
-      --accent: #FF6B00; /* Laranja Blue3 */
+      --primary: #002D6E;
+      --secondary: #00A3FF;
+      --accent: #FF6B00;
       --background: #f9f9f9;
       --white: #fff;
       --gray: #666;
       --dark: #111;
-      --cyan: #00FFFF; /* Azul ciano Blue3 */
     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--dark);
-      line-height: 1.6;
-      padding: 0;
-      margin: 0;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .navbar {
-      background-color: rgba(255, 255, 255, 0.95);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 15px 0;
-    }
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      gap: 30px;
-    }
-    .nav-links a {
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    /* Regra adicionada para garantir a cor branca do botão "Fale Comigo" */
-    .nav-links .cta-button {
-      color: var(--white) !important; /* Força a cor branca */
-    }
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-    .cta-button {
-      background: var(--primary);
-      /* color: var(--white); Removido daqui para evitar conflitos, movido para a regra mais específica acima */
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .cta-button:hover {
-      background: var(--secondary);
-    }
-    .hero {
-      background: linear-gradient(135deg, var(--primary), #001A41);
-      color: var(--white);
-      padding: 150px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('https://www.blue3investimentos.com.br/static/media/hero-bg.webp') no-repeat center center;
-      background-size: cover;
-      opacity: 0.2;
-      z-index: 1;
-    }
-    .hero .container {
-      position: relative;
-      z-index: 2;
-      /* Ajuste para centralizar o conteúdo hero após remover a imagem */
-      justify-content: center; 
-      text-align: center;
-      flex-direction: column; /* Em telas menores, o flex-direction já é column */
-    }
-    .hero-content {
-      max-width: 800px; /* Aumentado para melhor aproveitamento do espaço */
-      margin: 0 auto; /* Centraliza o conteúdo hero */
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    .hero h1 .line1 {
-      display: block;
-      color: var(--white);
-    }
-    .hero h1 .line2 {
-      display: block;
-      color: var(--secondary);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      font-weight: 300;
-    }
-    .video-section {
-      padding: 80px 0;
-      background: var(--white);
-    }
-    .video-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--background);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-    .video-placeholder {
-      width: 100%;
-      height: 450px;
-      background: #e0e0e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray);
-      font-size: 1.2rem;
-    }
-    section {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 30px;
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-    /* SOBRESCREVE A LARGURA MÁXIMA APENAS PARA A SEÇÃO DE MENTORIAS */
-    #mentorias {
-      max-width: 1200px; /* Permite que os 3 blocos se ajustem lado a lado */
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .section-title h2 {
-      font-size: 2.2rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: var(--accent);
-    }
-    h2 {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-    ul {
-      margin-left: 20px;
-      margin-bottom: 15px;
-    }
-    .mentorias-container {
-      display: flex;
-      flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-      gap: 30px;
-      justify-content: center; /* Centraliza os itens quando há menos de 3 na linha */
-      margin-top: 20px;
-    }
-    .mentoria {
-      /* flex-grow, flex-shrink, flex-basis */
-      flex: 1 1 calc(33.33% - 30px); /* Ajusta a base do item para 1/3 da largura menos o espaço do gap */
-      min-width: 280px; /* Largura mínima para cada card de mentoria antes de quebrar */
-      /* Removido max-width explícito aqui, pois flex-basis já define o tamanho */
-      margin-bottom: 20px;
-      padding: 25px;
-      border-radius: 12px;
-      background: var(--white);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-top: 4px solid var(--primary);
-    }
-    .mentoria:nth-child(1) {
-      border-top-color: var(--secondary);
-    }
-    .mentoria:nth-child(2) {
-      border-top-color: var(--primary);
-    }
-    .mentoria:nth-child(3) {
-      border-top-color: var(--accent);
-    }
-    .mentoria:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    .btn {
-      display: inline-block;
-      width: 100%;
-      margin-top: 15px;
-      background: var(--primary);
-      color: var(--white);
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      text-align: center;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .mentoria:nth-child(1) .btn {
-      background: var(--secondary);
-    }
-    .mentoria:nth-child(2) .btn {
-      background: var(--primary);
-    }
-    .mentoria:nth-child(3) .btn {
-      background: var(--accent);
-    }
-    .btn:hover {
-      background: var(--secondary);
-      transform: translateY(-2px);
-    }
-    .mentoria:nth-child(1) .btn:hover {
-      background: #0080c0;
-    }
-    .mentoria:nth-child(2) .btn:hover {
-      background: #00408f;
-    }
-    .mentoria:nth-child(3) .btn:hover {
-      background: #e05a00;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: var(--gray);
-      background: #f0f0f0;
-    }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
-    }
-    .social-links a {
-      color: var(--primary);
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-    .social-links a:hover {
-      color: var(--accent);
-    }
-    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--background); color: var(--dark); line-height: 1.6; }
+    .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+    /* Navbar */
+    .navbar { background: rgba(255,255,255,0.95); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 15px 0; }
+    .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { color: var(--dark); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links .cta-button { background: var(--primary); color: var(--white); padding: 10px 20px; border-radius: 6px; }
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--primary), #001A41); color: var(--white); padding: 150px 0 80px; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: url('https://www.blue3investimentos.com.br/static/media/hero-bg.webp') no-repeat center/cover; opacity: 0.2; z-index: 1; }
+    .hero .container { position: relative; z-index: 2; }
+    .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
+    .hero h1 .line1 { display: block; color: var(--white); }
+    .hero h1 .line2 { display: block; color: var(--secondary); }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 300; }
+    .hero .btn { background: var(--accent); color: var(--white); padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+    .hero .btn:hover { background: #e05a00; }
+    /* Vídeo */
+    .video-section { padding: 80px 0; background: var(--white); }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 2.2rem; color: var(--primary); position: relative; display: inline-block; }
+    .section-title h2::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: var(--accent); }
+    .video-container { max-width: 800px; margin: auto; background: var(--background); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+    .video-placeholder { width: 100%; height: 450px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: var(--gray); font-size: 1.2rem; }
+    /* Oferta e escassez */
+    .scarcity-section { background: var(--secondary); color: var(--white); padding: 60px 0; text-align: center; }
+    .scarcity-section p { font-size: 1.2rem; margin-bottom: 20px; }
+    .scarcity-section ul { list-style: none; margin: 20px 0; padding: 0; }
+    .scarcity-section ul li { margin-bottom: 10px; }
+    .scarcity-section ul li::before { content: '✔️'; margin-right: 8px; }
+    .scarcity-section .btn { background: var(--accent); }
+    /* Depoimentos */
+    .testimonials-section { padding: 60px 0; background: var(--white); }
+    .testimonials-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .testimonial-card { background: var(--background); padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); max-width: 400px; }
+    .testimonial-card p { font-style: italic; margin-bottom: 10px; }
+    .testimonial-card strong { display: block; text-align: right; color: var(--primary); }
+    /* Mentorias */
+    #mentorias { max-width: 1200px; margin: auto; padding: 40px 0; }
+    .mentorias-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+    .mentoria { flex: 1 1 calc(33.33% - 30px); min-width: 280px; padding: 25px; background: var(--white); border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); transition: transform 0.3s, box-shadow 0.3s; }
+    .mentoria:nth-child(1) { border-top-color: var(--secondary); }
+    .mentoria:nth-child(2) { border-top-color: var(--primary); }
+    .mentoria:nth-child(3) { border-top-color: var(--accent); }
+    .mentoria:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .mentoria h2 { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark); }
+    .mentoria p { margin-bottom: 15px; }
+    .mentoria ul { margin-left: 20px; margin-bottom: 15px; }
+    .mentoria .btn { display: inline-block; width: 100%; margin-top: 10px; text-decoration: none; padding: 12px; border-radius: 6px; color: var(--white); font-weight: 600; text-align: center; transition: background 0.3s; }
+    .mentoria:nth-child(1) .btn { background: var(--secondary); }
+    .mentoria:nth-child(2) .btn { background: var(--primary); }
+    .mentoria:nth-child(3) .btn { background: var(--accent); }
+    .mentoria:nth-child(1) .btn:hover { background: #0080c0; }
+    .mentoria:nth-child(2) .btn:hover { background: #00408f; }
+    .mentoria:nth-child(3) .btn:hover { background: #e05a00; }
+    /* Footer */
+    footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--gray); background: #f0f0f0; }
+    .social-links { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+    .social-links a { color: var(--dark); text-decoration: none; font-weight: 500; }
     /* Responsividade */
     @media (max-width: 992px) {
-      .hero-content {
-        margin-bottom: 40px;
-      }
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-      .video-placeholder {
-        height: 350px;
-      }
-      .mentorias-container {
-        flex-direction: column; /* Força as mentorias a ficarem uma abaixo da outra em telas menores */
-        align-items: center; /* Centraliza os cards quando estão em coluna */
-      }
-      .mentoria {
-        flex: 0 0 auto; /* Reseta as propriedades flex para que empilhem */
-        width: 100%; /* Ocupa a largura total do container flexível */
-        max-width: 400px; /* Limita a largura máxima para legibilidade em mobile */
-        min-width: unset; /* Permite encolher abaixo do min-width de desktop se necessário */
-      }
-      /* Ajuste o padding da seção de mentorias para telas menores */
-      #mentorias {
-        padding: 20px;
-      }
+      .hero h1 { font-size: 2.5rem; }
+      .video-placeholder { height: 350px; }
+      .mentoria { flex: 0 0 100%; max-width: 500px; }
     }
-    
-    @media (max-width: 768px) {
-      .navbar .container {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .nav-links {
-        gap: 15px;
-      }
-      .hero {
-        padding: 120px 0 60px;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .video-placeholder {
-        height: 300px;
-      }
-      section {
-        padding: 20px;
-      }
-    }
-    
     @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .video-placeholder {
-        height: 250px;
-      }
-      .section-title h2 {
-        font-size: 1.8rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .video-placeholder { height: 250px; }
+      .scarcity-section { padding: 40px 0; }
     }
   </style>
 </head>
 <body>
+
   <nav class="navbar">
     <div class="container">
       <a href="#" class="logo">Jhony Bosio</a>
       <div class="nav-links">
         <a href="#mentorias">Mentorias</a>
         <a href="#contato">Contato</a>
-        <a href="https://wa.me/5516996045700" class="cta-button" target="_blank">Fale Comigo</a>
+        <a href="https://linktr.ee/jhonybosio" class="cta-button" target="_blank">Recursos</a>
       </div>
     </div>
   </nav>
 
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <h1>
-          <span class="line1">Transforme sua</span>
-          <span class="line2">jornada financeira</span>
-        </h1>
-        <p>Seja qual for o seu momento de vida, estarei ao seu lado para te guiar na sua jornada de investimentos com estratégias personalizadas para cada nível de patrimônio.</p>
-        <a href="#mentorias" class="btn">Conheça as Mentorias</a>
-      </div>
-      <!-- A imagem do Jhony Bosio foi removida daqui -->
-      <!-- <img src="src/images/FotoJhonyBosiosemfundo.png" alt="Jhony Bosio" class="hero-image"> -->
+      <h1>
+        <span class="line1">Cansado(a) de investir e sentir medo todo mês?</span>
+        <span class="line2">É hora de mudar isso de vez</span>
+      </h1>
+      <p>Dorme tranquilo sabendo que seu patrimônio está protegido e crescendo — com estratégias personalizadas para seu perfil.</p>
+      <a href="#mentorias" class="btn">Quero investir com confiança</a>
     </div>
   </section>
 
   <section class="video-section">
     <div class="container">
-      <div class="section-title">
-        <h2>Conheça minha abordagem</h2>
-      </div>
+      <div class="section-title"><h2>Conheça minha abordagem</h2></div>
       <div class="video-container">
-        <!-- Opção 1: Incorporar vídeo do YouTube -->
-        <!-- 
-        <iframe width="100%" height="450" src="LINK_DO_YOUTUBE_AQUI" 
-          title="Jhony Bosio - Mentoria Financeira" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-        -->
-        
-        <!-- Opção 2: Vídeo hospedado localmente -->
-        <!-- 
-        <video width="100%" height="450" controls>
-          <source src="caminho/para/seu/video.mp4" type="video/mp4">
-          Seu navegador não suporta a tag de vídeo.
-        </video>
-        -->
-        
-        <!-- Espaço reservado até que o vídeo seja adicionado -->
         <div class="video-placeholder">
           <p>Adicione seu vídeo aqui substituindo este bloco pelo código de incorporação do YouTube ou pelo elemento de vídeo HTML5</p>
         </div>
@@ -423,11 +127,36 @@
     </div>
   </section>
 
-  <section id="mentorias">
-    <div class="section-title">
-      <h2>Qual mentoria combina com você?</h2>
+  <section class="scarcity-section">
+    <div class="container">
+      <h2>Oferta Exclusiva</h2>
+      <p>Se inscreva até <strong>30/06</strong> e garanta:</p>
+      <ul>
+        <li>Planilha personalizada de investimentos</li>
+        <li>1 sessão extra de análise ao vivo</li>
+      </ul>
+      <a href="#mentorias" class="btn">Garanta seus bônus</a>
     </div>
-    
+  </section>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-title"><h2>Depoimentos de quem já viveu a transformação</h2></div>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p>“Em 3 meses recuperei R$30k em erros de má gestão. Agora invisto sem medo!”</p>
+          <strong>- Fernando Oliveira</strong>
+        </div>
+        <div class="testimonial-card">
+          <p>“Minha confiança financeira nunca esteve tão alta. Hoje durmo tranquilo sabendo que meu dinheiro está trabalhando por mim.”</p>
+          <strong>- Mariana Silva</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mentorias">
+    <div class="section-title"><h2>Qual mentoria combina com você?</h2></div>
     <div class="mentorias-container">
       <div class="mentoria">
         <h2>IMPULSE – Cresça com estratégia</h2>
@@ -479,7 +208,7 @@
       <p>© 2025 Jhony Bosio | Assessor de Investimentos e Sócio da Blue3 Investimentos</p>
       <div class="social-links">
         <a href="https://instagram.com/jhonybosio" target="_blank">Instagram</a>
-        <a href="https://linktr.ee/jhonybosio" target="_blank">Linktr.ee</a>
+        <a href="https://linktr.ee/jhonybosio" target="_blank">Linktree</a>
       </div>
       <p>Embaixador XP | Blue3 Investimentos</p>
     </div>
