@@ -22,10 +22,6 @@
     .navbar { background: rgba(255,255,255,0.95); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 15px 0; }
     .navbar .container { display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-    .nav-links { display: flex; gap: 30px; }
-    .nav-links a { color: var(--dark); text-decoration: none; font-weight: 500; transition: color 0.3s; }
-    .nav-links a:hover { color: var(--primary); }
-    .nav-links .cta-button { background: var(--primary); color: var(--white); padding: 10px 20px; border-radius: 6px; }
     /* Hero */
     .hero { background: linear-gradient(135deg, var(--primary), #001A41); color: var(--white); padding: 150px 0 80px; text-align: center; position: relative; overflow: hidden; }
     .hero::after { content: ''; position: absolute; inset: 0; background: url('https://www.blue3investimentos.com.br/static/media/hero-bg.webp') no-repeat center/cover; opacity: 0.2; z-index: 1; }
@@ -49,7 +45,8 @@
     .scarcity-section ul { list-style: none; margin: 20px 0; padding: 0; }
     .scarcity-section ul li { margin-bottom: 10px; }
     .scarcity-section ul li::before { content: '✔️'; margin-right: 8px; }
-    .scarcity-section .btn { background: var(--accent); }
+    .scarcity-section .btn { background: var(--secondary); }
+    .scarcity-section .btn:hover { background: var(--primary); }
     /* Depoimentos */
     .testimonials-section { padding: 60px 0; background: var(--white); }
     .testimonials-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
@@ -65,8 +62,8 @@
     .mentoria:nth-child(3) { border-top-color: var(--accent); }
     .mentoria:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .mentoria h2 { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark); }
-    .mentoria p { margin-bottom: 15px; }
-    .mentoria ul { margin-left: 20px; margin-bottom: 15px; }
+    .mentoria p, .mentoria ul { margin-bottom: 15px; }
+    .mentoria ul { margin-left: 20px; }
     .mentoria .btn { display: inline-block; width: 100%; margin-top: 10px; text-decoration: none; padding: 12px; border-radius: 6px; color: var(--white); font-weight: 600; text-align: center; transition: background 0.3s; }
     .mentoria:nth-child(1) .btn { background: var(--secondary); }
     .mentoria:nth-child(2) .btn { background: var(--primary); }
@@ -76,32 +73,18 @@
     .mentoria:nth-child(3) .btn:hover { background: #e05a00; }
     /* Footer */
     footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: var(--gray); background: #f0f0f0; }
-    .social-links { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+    .social-links { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 20px 0; }
     .social-links a { color: var(--dark); text-decoration: none; font-weight: 500; }
     /* Responsividade */
-    @media (max-width: 992px) {
-      .hero h1 { font-size: 2.5rem; }
-      .video-placeholder { height: 350px; }
-      .mentoria { flex: 0 0 100%; max-width: 500px; }
-    }
-    @media (max-width: 576px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .video-placeholder { height: 250px; }
-      .scarcity-section { padding: 40px 0; }
-    }
+    @media (max-width: 992px) { .hero h1 { font-size: 2.5rem; } .video-placeholder { height: 350px; } .mentoria { flex: 0 0 100%; max-width: 500px; } }
+    @media (max-width: 576px) { .hero h1 { font-size: 2rem; } .hero p { font-size: 1rem; } .video-placeholder { height: 250px; } .scarcity-section { padding: 40px 0; } }
   </style>
 </head>
 <body>
 
   <nav class="navbar">
     <div class="container">
-      <a href="#" class="logo">Jhony Bosio</a>
-      <div class="nav-links">
-        <a href="#mentorias">Mentorias</a>
-        <a href="#contato">Contato</a>
-        <a href="https://linktr.ee/jhonybosio" class="cta-button" target="_blank">Recursos</a>
-      </div>
+      <a href="#" class="logo">Jhony Bosio | Assessor de investimentos certificado ANCORD</a>
     </div>
   </nav>
 
@@ -111,7 +94,7 @@
         <span class="line1">Cansado(a) de investir e sentir medo todo mês?</span>
         <span class="line2">É hora de mudar isso de vez</span>
       </h1>
-      <p>Dorme tranquilo sabendo que seu patrimônio está protegido e crescendo — com estratégias personalizadas para seu perfil.</p>
+      <p>Durma tranquilo sabendo que seu patrimônio está protegido e crescendo — com estratégias personalizadas para seu perfil.</p>
       <a href="#mentorias" class="btn">Quero investir com confiança</a>
     </div>
   </section>
@@ -132,7 +115,7 @@
       <h2>Oferta Exclusiva</h2>
       <p>Se inscreva até <strong>30/06</strong> e garanta:</p>
       <ul>
-        <li>Planilha personalizada de investimentos</li>
+        <li>Participar da comunidade exclusiva</li>
         <li>1 sessão extra de análise ao vivo</li>
       </ul>
       <a href="#mentorias" class="btn">Garanta seus bônus</a>
@@ -156,60 +139,61 @@
   </section>
 
   <section id="mentorias">
-    <div class="section-title"><h2>Qual mentoria combina com você?</h2></div>
-    <div class="mentorias-container">
-      <div class="mentoria">
-        <h2>IMPULSE – Cresça com estratégia</h2>
-        <p>🔎 <strong>Problema:</strong> Você investe, mas sente que pode evoluir mais rápido com orientação.</p>
-        <p>✅ <strong>Transformação:</strong> Planejamento personalizado e reuniões de acompanhamento para guiar seus próximos passos.</p>
-        <h3>Você recebe:</h3>
-        <ul>
-          <li>3 Carteiras recomendadas</li>
-          <li>Relatório mensal de alocação</li>
-          <li>1 reunião de planejamento financeiro</li>
-          <li>5 reuniões de acompanhamento em 6 meses</li>
-        </ul>
-        <p><strong>Investimento:</strong> R$ 1.997,00</p>
-        <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20IMPULSE" class="btn" target="_blank">Quero essa mentoria</a>
-      </div>
+    <div class="container">
+      <h2 class="section-title">Qual mentoria combina com você?</h2>
+      <div class="mentorias-container">
+        <div class="mentoria">
+          <h2>IMPULSE – Cresça com estratégia</h2>
+          <p>🔎 <strong>Problema:</strong> Você investe, mas sente que pode evoluir mais rápido com orientação.</p>
+          <p>✅ <strong>Transformação:</strong> Planejamento personalizado e reuniões de acompanhamento para guiar seus próximos passos.</p>
+          <h3>Você recebe:</h3>
+          <ul>
+            <li>3 Carteiras recomendadas</li>
+            <li>Relatório mensal de alocação</li>
+            <li>1 reunião de planejamento financeiro</li>
+            <li>5 reuniões de acompanhamento em 6 meses</li>
+          </ul>
+          <p><strong>Investimento:</strong> R$ 1.997,00</p>
+          <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20IMPULSE" class="btn" target="_blank">Quero essa mentoria</a>
+        </div>
 
-      <div class="mentoria">
-        <h2>EQUILIBRIUM – Proteja seu patrimônio</h2>
-        <p>🔎 <strong>Problema:</strong> Você já tem patrimônio relevante e precisa proteger e crescer com inteligência.</p>
-        <p>✅ <strong>Transformação:</strong> Carteiras premium, diversificação, previdência e estratégia de longo prazo via fee fixo.</p>
-        <h3>Você recebe:</h3>
-        <ul>
-          <li>Tudo do IMPULSE</li>
-          <li>Atendimento via fee fixo (sem custo adicional)</li>
-          <li>Acesso a soluções exclusivas Blue3</li>
-        </ul>
-        <p><strong>Investimento:</strong> Gratuita para investidores com R$ 500 mil+</p>
-        <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20EQUILIBRIUM" class="btn" target="_blank">Sou cliente Blue3</a>
-      </div>
+        <div class="mentoria">
+          <h2>EQUILIBRIUM – Proteja seu patrimônio</h2>
+          <p>🔎 <strong>Problema:</strong> Você já tem patrimônio relevante e precisa proteger e crescer com inteligência.</p>
+          <p>✅ <strong>Transformação:</strong> Carteiras premium, diversificação, previdência e estratégia de longo prazo via fee fixo.</p>
+          <h3>Você recebe:</h3>
+          <ul>
+            <li>Tudo do IMPULSE</li>
+            <li>Atendimento via fee fixo (sem custo adicional)</li>
+            <li>Acesso a soluções exclusivas Blue3</li>
+          </ul>
+          <p><strong>Investimento:</strong> Gratuita para investidores com R$ 500 mil+</p>
+          <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20EQUILIBRIUM" class="btn" target="_blank">Sou cliente Blue3</a>
+        </div>
 
-      <div class="mentoria">
-        <h2>VANGUARD – Construa seu legado</h2>
-        <p>🔎 <strong>Problema:</strong> Você busca governança, sucessão, blindagem e visão internacional.</p>
-        <p>✅ <strong>Transformação:</strong> Atendimento privado, plano multigeracional e suporte do comitê XP/Blue3.</p>
-        <h3>Você recebe:</h3>
-        <ul>
-          <li>Tudo do EQUILIBRIUM</li>
-          <li>Planejamento sucessório, holding, blindagem</li>
-          <li>Mentoria para sucessores e visão global</li>
-        </ul>
-        <p><strong>Investimento:</strong> Exclusiva para investidores com R$ 3 milhões+</p>
-        <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20VANGUARD" class="btn" target="_blank">Quero atendimento Private</a>
+        <div class="mentoria">
+          <h2>VANGUARD – Construa seu legado</h2>
+          <p>🔎 <strong>Problema:</strong> Você busca governança, sucessão, blindagem e visão internacional.</p>
+          <p>✅ <strong>Transformação:</strong> Atendimento privado, plano multigeracional e suporte do comitê XP/Blue3.</p>
+          <h3>Você recebe:</h3>
+          <ul>
+            <li>Tudo do EQUILIBRIUM</li>
+            <li>Planejamento sucessório, holding, blindagem</li>
+            <li>Mentoria para sucessores e visão global</li>
+          </ul>
+          <p><strong>Investimento:</strong> Exclusiva para investidores com R$ 3 milhões+</p>
+          <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20VANGUARD" class="btn" target="_blank">Quero atendimento Private</a>
+        </div>
       </div>
     </div>
   </section>
 
   <footer id="contato">
     <div class="container">
-      <p>© 2025 Jhony Bosio | Assessor de Investimentos e Sócio da Blue3 Investimentos</p>
       <div class="social-links">
-        <a href="https://instagram.com/jhonybosio" target="_blank">Instagram</a>
         <a href="https://linktr.ee/jhonybosio" target="_blank">Linktree</a>
       </div>
+      <p>© 2025 Jhony Bosio | Assessor de Investimentos e Sócio da Blue3 Investimentos</p>
       <p>Embaixador XP | Blue3 Investimentos</p>
     </div>
   </footer>
