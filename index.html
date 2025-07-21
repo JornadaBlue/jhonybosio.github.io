@@ -30,6 +30,7 @@
             --background: #FFFFFF;
             --background-light: #F8F9FA;
             --border-light: #E5E7EB;
+            --highlight-color: #FF6B35; /* Nova cor de destaque - laranja mais escuro */
         }
         
         body {
@@ -118,7 +119,13 @@
         }
         
         .hero h1 .highlight {
-            color: var(--primary-yellow);
+            color: var(--highlight-color);
+            background: linear-gradient(135deg, var(--highlight-color), #E55A2B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(255, 107, 53, 0.2);
         }
         
         .hero h2 {
@@ -613,8 +620,15 @@
             border-top: 1px solid var(--border-light);
         }
         
-        /* Responsividade */
+        /* Melhor contraste mobile */
         @media (max-width: 768px) {
+            .hero h1 .highlight {
+                color: #D84315; /* Cor ainda mais escura para mobile */
+                text-shadow: 0 2px 4px rgba(216, 67, 21, 0.3);
+                -webkit-text-fill-color: #D84315; /* Override para WebKit */
+                background: none; /* Remove gradiente no mobile */
+            }
+            
             .solucoes-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -750,7 +764,7 @@
     <section class="oferta-section">
         <div class="container">
             <h2>✨ Oferta Exclusiva</h2>
-            <p>Se inscreva e garanta:</p>
+            <p>Se inscreva e garante:</p>
             
             <ul class="oferta-list">
                 <li>Participar da comunidade exclusiva</li>
