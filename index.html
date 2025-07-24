@@ -1,3 +1,10 @@
+Bom dia\!
+
+Entendido. Para adicionar o código do Google Analytics (gtag.js) e ajustar a cor do texto de destaque, a melhor prática é inserir o script dentro da tag `<head>`. A alteração da cor de destaque foi feita para o amarelo principal (`var(--primary-yellow)`), garantindo visibilidade e mantendo a identidade visual do site.
+
+Aqui está o código HTML completo e corrigido, com as alterações solicitadas:
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,10 +13,17 @@
     <title>Jhony Bosio | Mentoria Financeira & Assessoria de Investimentos</title>
     <meta name="description" content="Mentoria financeira personalizada com Jhony Bosio, Assessor de Investimentos certificado. Estratégias para fazer seu patrimônio crescer com segurança.">
     
-    <!-- Fonts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-75Q415Q6MQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-75Q415Q6MQ');
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="FotoJhonyBosiosemfundo.png">
     
     <style>
@@ -87,7 +101,7 @@
             right: 0;
             bottom: 0;
             background: radial-gradient(circle at 20% 80%, rgba(255, 214, 0, 0.1) 0%, transparent 50%),
-                       radial-gradient(circle at 80% 20%, rgba(255, 214, 0, 0.1) 0%, transparent 50%);
+                        radial-gradient(circle at 80% 20%, rgba(255, 214, 0, 0.1) 0%, transparent 50%);
         }
         
         .container {
@@ -119,13 +133,8 @@
         }
         
         .hero h1 .highlight {
-            color: var(--highlight-color);
-            background: linear-gradient(135deg, var(--highlight-color), #E55A2B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-yellow); /* Alterado para a cor amarela principal */
             font-weight: 900;
-            text-shadow: 0 2px 4px rgba(255, 107, 53, 0.2);
         }
         
         .hero h2 {
@@ -623,10 +632,10 @@
         /* Melhor contraste mobile */
         @media (max-width: 768px) {
             .hero h1 .highlight {
-                color: #D84315; /* Cor ainda mais escura para mobile */
-                text-shadow: 0 2px 4px rgba(216, 67, 21, 0.3);
-                -webkit-text-fill-color: #D84315; /* Override para WebKit */
-                background: none; /* Remove gradiente no mobile */
+                color: var(--primary-yellow); /* Mantido para mobile */
+                text-shadow: none;
+                -webkit-text-fill-color: var(--primary-yellow);
+                background: none;
             }
             
             .solucoes-grid {
@@ -689,7 +698,6 @@
 </head>
 
 <body>
-    <!-- Header -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
@@ -698,7 +706,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-badge">
@@ -742,7 +749,6 @@
         </div>
     </section>
 
-    <!-- Video Section -->
     <section class="video-section">
         <div class="container">
             <div class="section-title">
@@ -760,7 +766,6 @@
         </div>
     </section>
 
-    <!-- Oferta Section -->
     <section class="oferta-section">
         <div class="container">
             <h2>✨ Oferta Exclusiva</h2>
@@ -777,7 +782,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
             <div class="section-title">
@@ -805,7 +809,6 @@
         </div>
     </section>
 
-    <!-- Soluções Section -->
     <section id="solucoes">
         <div class="container">
             <div class="section-title">
@@ -814,7 +817,6 @@
             </div>
             
             <div class="solucoes-grid">
-                <!-- Bosio Finance -->
                 <div class="solucao-card bosio-finance">
                     <h3>🔧 COMECE AQUI</h3>
                     <div class="problema">
@@ -841,7 +843,6 @@
                     </a>
                 </div>
 
-                <!-- Impulse -->
                 <div class="solucao-card impulse">
                     <h3>🚀 CRESCIMENTO</h3>
                     <div class="problema">
@@ -863,12 +864,11 @@
                     </div>
                     
                     <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20IMPULSE" 
-                       target="_blank" class="solucao-button">
+                        target="_blank" class="solucao-button">
                         Quero essa mentoria
                     </a>
                 </div>
 
-                <!-- Equilibrium -->
                 <div class="solucao-card equilibrium">
                     <h3>⚖️ PROTEÇÃO</h3>
                     <div class="problema">
@@ -889,12 +889,11 @@
                     </div>
                     
                     <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20EQUILIBRIUM" 
-                       target="_blank" class="solucao-button">
+                        target="_blank" class="solucao-button">
                         Quero ser cliente Blue3
                     </a>
                 </div>
 
-                <!-- Vanguard -->
                 <div class="solucao-card vanguard">
                     <h3>👑 LEGADO</h3>
                     <div class="problema">
@@ -915,7 +914,7 @@
                     </div>
                     
                     <a href="https://wa.me/5516996045700?text=Tenho%20interesse%20na%20Mentoria%20VANGUARD" 
-                       target="_blank" class="solucao-button">
+                        target="_blank" class="solucao-button">
                         Quero atendimento Private
                     </a>
                 </div>
@@ -923,7 +922,6 @@
         </div>
     </section>
 
-    <!-- CTA Final -->
     <section class="cta-final">
         <div class="container">
             <h2>
@@ -952,7 +950,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -976,3 +973,4 @@
     </footer>
 </body>
 </html>
+```
