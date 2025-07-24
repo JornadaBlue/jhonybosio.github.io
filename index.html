@@ -126,7 +126,8 @@
         }
         
         .hero h1 .highlight {
-            color: var(--primary-yellow); /* Alterado para a cor amarela principal */
+            color: black;
+            text-shadow: -1px -1px 0 var(--primary-yellow), 1px -1px 0 var(--primary-yellow), -1px 1px 0 var(--primary-yellow), 1px 1px 0 var(--primary-yellow);
             font-weight: 900;
         }
         
@@ -383,10 +384,36 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
         
+        /* Banner de "Em Construção" */
+        .em-construcao-banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            padding: 1rem 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            pointer-events: none; /* Garante que o banner não bloqueie o clique do card */
+            z-index: 10;
+        }
+
+        /* Oculta os elementos do card quando está em construção */
+        .solucao-card.em-construcao > *:not(.em-construcao-banner) {
+            opacity: 0.2;
+        }
+        
         /* Card específicos */
         .solucao-card.bosio-finance {
             background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--yellow-hover) 100%);
             color: var(--text-dark);
+            position: relative; /* Necessário para posicionar o banner */
+            overflow: hidden; /* Oculta partes do banner que excedem o card */
         }
         
         .solucao-card.impulse {
@@ -459,6 +486,13 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+        }
+
+        /* Estilo para botão desativado */
+        .solucao-button.disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            pointer-events: none;
         }
         
         .bosio-finance .solucao-button {
@@ -625,9 +659,9 @@
         /* Melhor contraste mobile */
         @media (max-width: 768px) {
             .hero h1 .highlight {
-                color: var(--primary-yellow); /* Mantido para mobile */
-                text-shadow: none;
-                -webkit-text-fill-color: var(--primary-yellow);
+                color: black;
+                text-shadow: -1px -1px 0 var(--primary-yellow), 1px -1px 0 var(--primary-yellow), -1px 1px 0 var(--primary-yellow), 1px 1px 0 var(--primary-yellow);
+                -webkit-text-fill-color: black;
                 background: none;
             }
             
@@ -810,7 +844,8 @@
             </div>
             
             <div class="solucoes-grid">
-                <div class="solucao-card bosio-finance">
+                <div class="solucao-card bosio-finance em-construcao">
+                    <div class="em-construcao-banner">Em construção</div>
                     <h3>🔧 COMECE AQUI</h3>
                     <div class="problema">
                         🔎 <strong>Problema:</strong> Ainda não sabe para onde vai seu dinheiro?
@@ -831,7 +866,7 @@
                         <strong>Investimento:</strong> A partir de R$ 19,90/mês
                     </div>
                     
-                    <a href="https://bosiofinance.com" target="_blank" class="solucao-button">
+                    <a href="#" target="_blank" class="solucao-button disabled">
                         Quero começar agora
                     </a>
                 </div>
@@ -966,4 +1001,3 @@
     </footer>
 </body>
 </html>
-```
