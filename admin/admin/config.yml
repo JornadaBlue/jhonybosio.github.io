@@ -1,17 +1,17 @@
 backend:
   name: github
-  repo: jornadablue/jornadablue.github.io # Nome do seu repositório
-  branch: main # Ramo principal
+  repo: jornadablue/jornadablue.github.io
+  branch: main
 
-media_folder: "assets/uploads" # Opcional: para upload de imagens
-public_folder: "/assets/uploads" # Opcional
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
   - name: "buttons"
     label: "Botões da Página Principal"
-    folder: "_data/buttons" # Onde os arquivos de botões serão salvos
+    folder: "data/buttons" # Mudei de _data para data, mais seguro.
     create: true
-    slug: "{{slug}}"
+    slug: "{{slug}}" # Nome do arquivo será baseado no texto do botão
     fields:
       - {label: "Texto do Botão", name: "text", widget: "string"}
       - {label: "URL (Link de Destino)", name: "url", widget: "string"}
