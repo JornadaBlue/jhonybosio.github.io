@@ -1,3 +1,21 @@
+Isso mesmo, é a **mesma tag** para o site inteiro. Pense nela como o "CPF" do seu site para o Google Analytics. Você usa o mesmo código em todas as páginas para que o Google entenda que todas elas fazem parte do mesmo domínio (`jhonybosio.com`) e possa te dar relatórios unificados.
+
+Analisando o código da sua página `/mentoria`, vi que ele já tinha uma tag antiga do Google Analytics (`G-75Q415Q6MQ`). O que farei é **substituir a antiga pela nova** (`G-DST2ZXMPKL`) para garantir que todos os dados sejam enviados para o painel correto que estamos usando.
+
+-----
+
+### **Código Atualizado para `mentoria/index.html`**
+
+**Instruções:**
+
+1.  Vá até o arquivo `mentoria/index.html` no seu projeto no GitHub.
+2.  Clique para editar, apague **todo** o conteúdo que está lá.
+3.  Copie e cole este novo código completo abaixo.
+4.  Salve ("Commit changes").
+
+<!-- end list -->
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR" style="scroll-behavior: smooth;">
 <head>
@@ -17,19 +35,21 @@
     <meta property="twitter:url" content="https://jhonybosio.com/">
     <meta property="twitter:title" content="Jhony Bosio | Assessor de Investimentos & Sócio Blue3">
     <meta property="twitter:description" content="Planejamento financeiro e estratégias de investimento personalizadas para proteger e multiplicar seu patrimônio com segurança.">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-75Q415Q6MQ"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DST2ZXMPKL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-75Q415Q6MQ');
+
+      gtag('config', 'G-DST2ZXMPKL');
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="icon" type="image/png" href="FotoJhonyBosiosemfundo.png">
+    <link rel="icon" type="image/png" href="/FotoJhonyBosiosemfundo.png">
     
     <style>
         /* CSS Otimizado - Design Dark Mode inspirado em bosiofinance.com */
@@ -43,13 +63,11 @@
             --text-medium: #A0A0A0;
             --text-dark-on-light: #1A1A1A;
         }
-        
         *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--background-dark);
@@ -59,14 +77,11 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
-        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -77,14 +92,12 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-dark);
         }
-        
         .nav-container {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.25rem 2rem;
         }
-        
         .logo {
             font-size: 1.1rem;
             font-weight: 600;
@@ -92,13 +105,10 @@
             text-decoration: none;
             text-align: center;
         }
-        
-        /* Hero Section */
         .hero {
             padding: 180px 0 100px;
             text-align: center;
         }
-        
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -111,7 +121,6 @@
             font-size: 0.875rem;
             margin-bottom: 2rem;
         }
-        
         .hero h1 {
             font-size: clamp(2.8rem, 5vw, 4rem);
             font-weight: 800;
@@ -122,11 +131,9 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
         .hero h1 .highlight {
             color: var(--primary-yellow);
         }
-        
         .hero h2 {
             font-size: clamp(1.1rem, 3vw, 1.25rem);
             font-weight: 400;
@@ -136,7 +143,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
         .cta-button {
             display: inline-block;
             background: var(--primary-yellow);
@@ -150,14 +156,11 @@
             border: none;
             cursor: pointer;
         }
-        
         .cta-button:hover {
             background: var(--yellow-hover);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(255, 214, 0, 0.1);
         }
-        
-        /* Seções e Títulos */
         .section {
             padding: 100px 0;
             border-bottom: 1px solid var(--border-dark);
@@ -165,33 +168,27 @@
         .section:last-of-type {
             border-bottom: none;
         }
-
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
         }
-        
         .section-title h2 {
             font-size: clamp(2.2rem, 4vw, 2.8rem);
             font-weight: 800;
             color: var(--text-light);
             margin-bottom: 1rem;
         }
-        
         .section-title p {
             font-size: 1.125rem;
             color: var(--text-medium);
             max-width: 600px;
             margin: 0 auto;
         }
-
-        /* Depoimentos */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-        
         .testimonial-card {
             background: var(--surface-dark);
             padding: 2.5rem 2rem 2rem;
@@ -199,7 +196,6 @@
             border: 1px solid var(--border-dark);
             position: relative;
         }
-        
         .testimonial-card p {
             font-size: 1.1rem;
             color: var(--text-light);
@@ -207,21 +203,17 @@
             position: relative;
             z-index: 2;
         }
-        
         .testimonial-author {
             font-weight: 600;
             color: var(--primary-yellow);
             text-align: right;
         }
-        
-        /* Soluções */
         .solucoes-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin-top: 4rem;
         }
-        
         .solucao-card {
             background: var(--surface-dark);
             border-radius: 12px;
@@ -231,27 +223,23 @@
             display: flex;
             flex-direction: column;
         }
-        
         .solucao-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary-yellow);
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
-        
         .solucao-card h3 {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: var(--text-light);
         }
-        .solucao-card h3 span { /* Para o emoji */
+        .solucao-card h3 span {
             margin-right: 0.5rem;
         }
-
         .card-content {
             flex-grow: 1;
         }
-        
         .problema, .transformacao {
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
@@ -260,19 +248,16 @@
         .problema strong, .transformacao strong {
             color: var(--text-light);
         }
-        
         .beneficios {
             list-style: none;
             margin-bottom: 2rem;
         }
-        
         .beneficios li {
             margin-bottom: 0.75rem;
             padding-left: 1.75rem;
             position: relative;
             color: var(--text-medium);
         }
-        
         .beneficios li::before {
             content: '✓';
             position: absolute;
@@ -281,7 +266,6 @@
             color: var(--primary-yellow);
             font-size: 1.1rem;
         }
-        
         .investimento {
             font-size: 1.1rem;
             font-weight: 700;
@@ -289,7 +273,6 @@
             text-align: center;
             color: var(--text-light);
         }
-        
         .solucao-button {
             display: block;
             width: 100%;
@@ -304,58 +287,47 @@
             color: var(--text-dark-on-light);
             border: 2px solid var(--primary-yellow);
         }
-        
         .solucao-button:hover {
             background: var(--yellow-hover);
             border-color: var(--yellow-hover);
             transform: scale(1.02);
         }
-        
         .solucao-card.vanguard {
             background: linear-gradient(145deg, #2A2A2A 0%, #1C1C1C 100%);
         }
-
-        /* Footer */
         .footer {
             background: var(--surface-dark);
             padding: 60px 0 40px;
             text-align: center;
         }
-        
         .footer-title {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--text-light);
             margin-bottom: 0.5rem;
         }
-        
         .footer-desc {
             color: var(--text-medium);
             max-width: 500px;
             margin: 0 auto 2.5rem;
         }
-        
         .social-links {
             margin-bottom: 2.5rem;
         }
-
         .social-links a {
             display: inline-block;
             margin: 0 0.75rem;
             color: var(--text-medium);
             transition: all 0.2s ease;
         }
-
         .social-links a:hover {
             transform: scale(1.1);
             color: var(--primary-yellow);
         }
-
         .social-links svg {
             width: 32px;
             height: 32px;
         }
-
         .footer-copy {
             font-size: 0.875rem;
             color: var(--text-medium);
@@ -368,19 +340,15 @@
             color: var(--text-light);
             text-decoration: none;
         }
-        
-        /* Media Queries */
         @media (max-width: 900px) {
             .solucoes-grid {
                 grid-template-columns: 1fr;
             }
         }
-
         @media (max-width: 768px) {
             .container { padding: 0 1.5rem; }
             .hero { padding: 140px 0 80px; }
         }
-        
         @media (max-width: 480px) {
             .container { padding: 0 1rem; }
             .hero h1 { font-size: 2.2rem; }
@@ -451,27 +419,27 @@
                 
                 <div class="solucoes-grid">
                     <div class="solucao-card">
-                         <h3><span>🔧</span>COMECE AQUI: Bosio Finance</h3>
-                         <div class="card-content">
-                            <div class="problema">
-                                <strong>Problema:</strong> Não sabe para onde seu dinheiro vai e se sente perdido no fim do mês.
-                            </div>
-                            <div class="transformacao">
-                                <strong>Transformação:</strong> Tenha um mapa completo das suas finanças com uma ferramenta de controle poderosa e intuitiva.
-                            </div>
-                         </div>
-                        <div class="investimento">Assinatura mensal</div>
-                        <a href="https://bosiofinance.com" target="_blank" class="solucao-button">Conhecer a Ferramenta</a>
+                          <h3><span>🔧</span>COMECE AQUI: Bosio Finance</h3>
+                          <div class="card-content">
+                              <div class="problema">
+                                  <strong>Problema:</strong> Não sabe para onde seu dinheiro vai e se sente perdido no fim do mês.
+                              </div>
+                              <div class="transformacao">
+                                  <strong>Transformação:</strong> Tenha um mapa completo das suas finanças com uma ferramenta de controle poderosa e intuitiva.
+                              </div>
+                           </div>
+                         <div class="investimento">Assinatura mensal</div>
+                         <a href="https://bosiofinance.com" target="_blank" class="solucao-button">Conhecer a Ferramenta</a>
                     </div>
 
                     <div class="solucao-card">
                         <h3><span>🚀</span>CRESCIMENTO: Mentoria Impulse</h3>
                         <div class="card-content">
                            <div class="problema">
-                               <strong>Problema:</strong> Você já investe, mas sente que poderia ter resultados muito melhores com orientação profissional.
+                                <strong>Problema:</strong> Você já investe, mas sente que poderia ter resultados muito melhores com orientação profissional.
                            </div>
                            <div class="transformacao">
-                               <strong>Transformação:</strong> Um plano de voo personalizado para acelerar seus resultados com reuniões de acompanhamento estratégico.
+                                <strong>Transformação:</strong> Um plano de voo personalizado para acelerar seus resultados com reuniões de acompanhamento estratégico.
                            </div>
                         </div>
                        <div class="investimento">Pagamento único de R$ 1.997,00</div>
@@ -479,13 +447,13 @@
                     </div>
 
                     <div class="solucao-card">
-                        <h3><span>⚖️</span>PROTEÇÃO: Assessoria Blue3</h3>
+                         <h3><span>⚖️</span>PROTEÇÃO: Assessoria Blue3</h3>
                          <div class="card-content">
                            <div class="problema">
-                               <strong>Problema:</strong> Você tem um patrimônio relevante e sua prioridade é proteger, diversificar e crescer com inteligência fiscal.
+                                <strong>Problema:</strong> Você tem um patrimônio relevante e sua prioridade é proteger, diversificar e crescer com inteligência fiscal.
                            </div>
                            <div class="transformacao">
-                               <strong>Transformação:</strong> Assessoria completa para clientes de alta renda (fee fixo), com acesso a produtos e estratégias exclusivas.
+                                <strong>Transformação:</strong> Assessoria completa para clientes de alta renda (fee fixo), com acesso a produtos e estratégias exclusivas.
                            </div>
                         </div>
                        <div class="investimento">Para investidores com R$ 300k+</div>
@@ -493,13 +461,13 @@
                     </div>
 
                     <div class="solucao-card vanguard">
-                        <h3><span>👑</span>LEGADO: Atendimento Private</h3>
+                         <h3><span>👑</span>LEGADO: Atendimento Private</h3>
                          <div class="card-content">
                            <div class="problema">
-                               <strong>Problema:</strong> Você busca construir um legado e precisa de governança, blindagem patrimonial e uma visão global para seus investimentos.
+                                <strong>Problema:</strong> Você busca construir um legado e precisa de governança, blindagem patrimonial e uma visão global para seus investimentos.
                            </div>
                            <div class="transformacao">
-                               <strong>Transformação:</strong> Atendimento privado com suporte do comitê de investimentos XP/Blue3 e soluções de wealth management.
+                                <strong>Transformação:</strong> Atendimento privado com suporte do comitê de investimentos XP/Blue3 e soluções de wealth management.
                            </div>
                         </div>
                        <div class="investimento">Para investidores com R$ 3M+</div>
@@ -533,3 +501,4 @@
     </footer>
 </body>
 </html>
+```
