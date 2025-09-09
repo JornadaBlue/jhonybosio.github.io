@@ -57,39 +57,19 @@
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
 
-    a,button{outline:none}
-    a:focus-visible,.cta-button:focus-visible,.solucao-button:focus-visible{
-      outline:2px solid var(--primary-yellow); outline-offset:3px; border-radius:8px
-    }
-
     .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
 
-    /* HEADER */
+    /* HEADER SIMPLES */
     .header{
       position:sticky; top:0; z-index:1000;
       background:#FFFFFFF2; backdrop-filter:saturate(150%) blur(6px);
       border-bottom:1px solid var(--border);
     }
-    .nav-container{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:.75rem; padding:.75rem 0;
+    .brandbar{display:flex; align-items:center; justify-content:center; padding:.75rem 0}
+    .brandtext{
+      font-weight:800; font-size:1rem; color:var(--text); text-align:center;
+      white-space:normal; line-height:1.3;
     }
-    .logo{
-      font-size:1rem; font-weight:800; color:var(--text); text-decoration:none;
-      white-space:nowrap;
-    }
-    .nav-links{
-      display:flex; align-items:center; gap:.75rem; flex-wrap:wrap;
-    }
-    .nav-links a{
-      color:var(--text); text-decoration:none; font-weight:600; font-size:.95rem;
-    }
-    .cta-button{
-      display:inline-block; background:var(--primary-yellow); color:#111;
-      padding:.75rem 1rem; border-radius:10px; text-decoration:none; font-weight:800; font-size:.98rem;
-      border:1px solid var(--primary-yellow); transition:.2s; white-space:nowrap;
-    }
-    .cta-button:hover{background:var(--yellow-hover); transform:translateY(-1px); box-shadow:0 8px 18px rgba(255,214,0,.18)}
 
     /* HERO */
     .hero{
@@ -108,6 +88,12 @@
       font-size:clamp(.98rem,2.2vw,1.15rem); font-weight:400; color:var(--text-medium);
       max-width:720px; margin:0 auto 1.4rem;
     }
+    .cta-button{
+      display:inline-block; background:var(--primary-yellow); color:#111;
+      padding:.75rem 1rem; border-radius:10px; text-decoration:none; font-weight:800; font-size:.98rem;
+      border:1px solid var(--primary-yellow); transition:.2s; white-space:nowrap;
+    }
+    .cta-button:hover{background:var(--yellow-hover); transform:translateY(-1px); box-shadow:0 8px 18px rgba(255,214,0,.18)}
 
     /* SEÇÕES */
     .section{padding:68px 0;border-bottom:1px solid var(--border)}
@@ -123,17 +109,15 @@
     .testimonial-author{font-weight:600;color:#333;text-align:right}
 
     /* SOLUÇÕES */
-    .solucoes-grid{
-      display:grid; gap:1rem; margin-top:1.6rem;
-      grid-template-columns:repeat(3,1fr);
-    }
+    .solucoes-grid{display:grid; gap:1rem; margin-top:1.6rem; grid-template-columns:repeat(3,1fr);}
     .solucao-card{
       background:var(--card); border-radius:12px; padding:1.4rem; border:1px solid var(--border);
       transition:.2s; display:flex; flex-direction:column; height:100%;
     }
     .solucao-card:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.06)}
     .solucao-card h3{font-size:1.2rem; font-weight:800; margin-bottom:.7rem; color:var(--text)}
-    .solucao-card h3 span{margin-right:.5rem}
+    .solucao-card h3 .small{font-weight:800; opacity:.9}
+    .solucao-card h3 .line{display:block}
     .card-content{flex-grow:1}
     .problema,.transformacao{font-size:.95rem;margin-bottom:.9rem;color:var(--text-medium)}
     .problema strong,.transformacao strong{color:var(--text)}
@@ -164,21 +148,12 @@
     .footer-copy a{color:var(--text);text-decoration:none}
     .legal-note{margin-top:10px;font-size:.8rem;color:var(--muted)}
 
-    /* MOBILE AJUSTES */
-    @media(max-width:1024px){
-      .container{padding:0 1rem}
-    }
-    @media(max-width:900px){
-      .solucoes-grid{grid-template-columns:1fr;}
-    }
-    @media(max-width:768px){
-      .hero{padding:110px 0 56px}
-      .nav-links{gap:.5rem}
-      .nav-links a{font-size:.9rem}
-      .cta-button{padding:.6rem .9rem;font-size:.92rem}
-    }
+    /* MOBILE */
+    @media(max-width:1024px){.container{padding:0 1rem}}
+    @media(max-width:900px){.solucoes-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.hero{padding:110px 0 56px}}
     @media(max-width:420px){
-      .logo{font-size:.95rem}
+      .brandtext{font-size:.95rem}
       .hero h1{font-size:1.8rem}
       .hero h2{font-size:.95rem}
     }
@@ -191,21 +166,15 @@
 
 <body id="topo">
   <header class="header">
-    <nav class="container nav-container" aria-label="Primária">
-      <a href="#topo" class="logo">Jhony Bosio | Assessor Blue3 | XP</a>
-      <div class="nav-links">
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#solucoes">Soluções</a>
-        <a href="#contato">Contato</a>
-        <a class="cta-button" href="https://wa.me/5516996045700?text=Ol%C3%A1%2C%20Jhony!%20Vim%20pelo%20seu%20site.&utm_source=site&utm_medium=header_cta&utm_campaign=whatsapp" target="_blank" rel="noopener" onclick="trackCTA('header_whatsapp')">Fale no WhatsApp</a>
-      </div>
-    </nav>
+    <div class="container brandbar">
+      <div class="brandtext">Jhony Bosio | Assessor de investimentos Blue3 | Embaixador @XP_B2B</div>
+    </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container">
-        <div class="hero-badge">Assessoria e Mentorias Blue3 | XP</div>
+        <div class="hero-badge">Assessoria e Mentoria: Invista como profissional</div>
 
         <h1>Sua vida financeira parece uma <span class="highlight">montanha-russa</span> constante?</h1>
         <h2>Chega de incerteza. Construa um plano para crescer com segurança e o suporte de um especialista.</h2>
@@ -247,7 +216,11 @@
         <div class="solucoes-grid">
           <!-- Mentoria Impulse -->
           <div class="solucao-card">
-            <h3><span>🚀</span>Crescimento: Mentoria Impulse</h3>
+            <h3>
+              <span>🚀</span>
+              <span class="small">Crescimento:</span>
+              <span class="line">Mentoria Impulse</span>
+            </h3>
             <div class="card-content">
               <div class="problema">
                 <strong>Problema:</strong> Você já investe, mas sente que poderia ter resultados melhores com orientação profissional.
@@ -260,10 +233,8 @@
                 <li>Alocação simples e disciplinada</li>
                 <li>Suporte contínuo para manter a rota</li>
               </ul>
-              <!-- linha persuasiva nova -->
               <p class="problema" style="margin-top:.4rem">
-                Se você já comprou cursos e maratonou vídeos, mas ainda não domina seu controle financeiro nem investe com segurança,
-                talvez falte um profissional de mercado ao seu lado conduzindo você com método, prioridade e acompanhamento.
+                Se você já comprou cursos e maratonou vídeos, mas ainda não domina seu controle financeiro nem investe com segurança, talvez falte um profissional de mercado ao seu lado conduzindo você com método, prioridade e acompanhamento.
               </p>
             </div>
             <div class="investimento">Assinatura R$ 299,00 por mês, cancele quando quiser</div>
@@ -275,7 +246,11 @@
 
           <!-- Equilibrium -->
           <div class="solucao-card">
-            <h3><span>⚖️</span>Equilibrium: Assessoria Blue3</h3>
+            <h3>
+              <span>⚖️</span>
+              <span class="small">Equilibrium:</span>
+              <span class="line">Assessoria Blue3</span>
+            </h3>
             <div class="card-content">
               <div class="problema">
                 <strong>Problema:</strong> Você tem patrimônio relevante e precisa equilibrar crescimento e segurança com inteligência fiscal.
@@ -289,7 +264,7 @@
                 <li>Curadoria Blue3 | XP e governança financeira</li>
               </ul>
             </div>
-            <div class="investimento">Indicado para patrimônio de R$ 300 mil a R$ 1 milhão</div>
+            <div class="investimento">Indicado para patrimônio de R$ 300 mil a R$ 3 milhões</div>
             <div class="btns-row">
               <a href="https://wa.me/5516996045700?text=Quero%20falar%20sobre%20a%20mentoria%20Equilibrium%20(Assessoria%20Blue3)&utm_source=site&utm_medium=cta&utm_campaign=equilibrium" target="_blank" rel="noopener" class="solucao-button" onclick="trackCTA('equilibrium_whatsapp')">Falar no WhatsApp</a>
               <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A68697" target="_blank" rel="noopener" class="solucao-button secondary" onclick="trackCTA('equilibrium_abrir_conta')">Quero ser cliente Blue3</a>
@@ -298,7 +273,11 @@
 
           <!-- Vanguard -->
           <div class="solucao-card vanguard">
-            <h3><span>👑</span>Vanguard: Atendimento Private</h3>
+            <h3>
+              <span>👑</span>
+              <span class="small">Vanguard:</span>
+              <span class="line">Atendimento Private</span>
+            </h3>
             <div class="card-content">
               <div class="problema">
                 <strong>Problema:</strong> Você quer transformar patrimônio em legado com governança, blindagem patrimonial e visão global.
@@ -312,7 +291,7 @@
                 <li>Acesso a produtos e operações exclusivas</li>
               </ul>
             </div>
-            <div class="investimento">Indicado para patrimônio de R$ 1 milhão a R$ 5 milhões</div>
+            <div class="investimento">Indicado para patrimônio de R$ 3 milhões a R$ 20 milhões</div>
             <div class="btns-row">
               <a href="https://wa.me/5516996045700?text=Quero%20falar%20sobre%20a%20mentoria%20Vanguard%20(Private)%20da%20Blue3&utm_source=site&utm_medium=cta&utm_campaign=vanguard" target="_blank" rel="noopener" class="solucao-button" onclick="trackCTA('vanguard_whatsapp')">Falar no WhatsApp</a>
               <a href="https://cadastro.xpi.com.br/v3/cadastro/nome?assessor=A68697" target="_blank" rel="noopener" class="solucao-button secondary" onclick="trackCTA('vanguard_abrir_conta')">Quero ser cliente Blue3</a>
@@ -332,7 +311,7 @@
       </p>
       <div class="social-links">
         <a href="https://instagram.com/jhonybosio" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg>
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.69-1.645-.69-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg>
         </a>
         <a href="https://wa.me/5516996045700?text=Ol%C3%A1%2C%20Jhony!%20Vim%20pelo%20site%20e%20quero%20conversar.&utm_source=site&utm_medium=footer_cta&utm_campaign=whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
           <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.502 1.905 6.46l-1.245 4.564 4.66-1.241z"></path></svg>
