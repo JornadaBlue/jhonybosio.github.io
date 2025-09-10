@@ -173,10 +173,6 @@
     .solucao-card h3{font-size:1.4rem; font-weight:800; color:var(--text);line-height:1.3}
     .solucao-card h3 .small{font-weight:600; opacity:.8;font-size:1rem;display:block;margin-bottom:.2rem}
     .card-content{flex-grow:1}
-    .problema,.transformacao{font-size:1rem;margin-bottom:1rem;line-height:1.6}
-    .problema{color:var(--accent-orange);background:#1A1A1A;padding:1rem;border-radius:8px;border-left:4px solid var(--accent-orange)}
-    .transformacao{color:var(--success);background:#ECFDF5;padding:1rem;border-radius:8px;border-left:4px solid var(--success)}
-    .problema strong,.transformacao strong{font-weight:700}
     .beneficios{list-style:none;margin:1.5rem 0}
     .beneficios li{margin-bottom:.6rem;padding-left:1.8rem;position:relative;color:var(--text-medium);line-height:1.5}
     .beneficios li::before{content:'✓';position:absolute;left:0;font-weight:700;color:var(--primary-blue);font-size:1.2rem}
@@ -194,8 +190,28 @@
     .solucao-button.secondary{background:transparent;color:var(--primary-blue)}
     .solucao-button.secondary:hover{background:var(--primary-blue);color:white}
 
-    .solucao-card.destaque{background:linear-gradient(135deg,#FFFBEB 0%, #FEF3C7 100%);border-color:var(--accent-orange)}
-    .solucao-card.destaque::before{background:var(--accent-orange)}
+    /* AJUSTE DE CORES: blocos internos dos cards */
+    .problema{
+      color:var(--text);
+      background:linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%); /* slate-50 → blue-50 */
+      padding:1rem;
+      border-radius:8px;
+      border-left:4px solid var(--primary-blue);
+    }
+    .transformacao{
+      color:var(--text);
+      background:linear-gradient(180deg, #F0F9FF 0%, #E0F2FE 100%); /* sky-50 → light-sky */
+      padding:1rem;
+      border-radius:8px;
+      border-left:4px solid var(--blue-hover);
+    }
+
+    /* Destaque sem amarelo, alinhado ao azul */
+    .solucao-card.destaque{
+      background:linear-gradient(135deg,#F8FAFC 0%, #EFF6FF 100%);
+      border-color:var(--primary-blue);
+    }
+    .solucao-card.destaque::before{background:var(--primary-blue)}
 
     /* CREDIBILIDADE */
     .credibilidade{background:var(--primary-blue);color:white;text-align:center}
@@ -302,8 +318,8 @@
             <h3>O que você está enfrentando?</h3>
             <p>Muitos investidores ficam presos em um ciclo de incertezas que impede o crescimento real do patrimônio:</p>
             <ul class="problema-list">
-              <li>Decisões baseadas em emoção ou "dicas" de terceiros</li>
-              <li>Falta de estratégia clara para diferentes cenários</li>
+              <li>Decisões baseadas em emoção ou dicas de terceiros</li>
+              <li>Falta de estratégia clara para diferentes cenarios</li>
               <li>Portfólio desorganizado sem visão de longo prazo</li>
               <li>Medo de perder oportunidades ou tomar decisões erradas</li>
               <li>Ausência de acompanhamento profissional consistente</li>
